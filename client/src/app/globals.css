@@ -1,0 +1,287 @@
+ @import url("https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,800&display=swap");
+/* @import "react-quill/dist/quill.snow.css"; */
+
+ @tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {  
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply  bg-background text-foreground;
+  }
+}
+
+
+
+
+@layer components {
+/* general */
+.padding {
+  @apply px-2 xs:px-6 lg:px-8;
+}
+
+/* text */
+.text-bold {
+  @apply text-4xl font-bold tracking-tight text-gray-900 xxs:text-6xl sm:text-7xl xl:text-8xl;
+}
+.text-bold-white {  
+  @apply text-5xl font-bold font-sora tracking-tight  xxs:text-6xl xl:text-7xl ;
+}
+.text-bold-5xl {
+  @apply text-2xl font-bold font-sora tracking-tight text-gray-900 xs:text-4xl sm:text-5xl;
+}
+.text-bold-3xl {
+  @apply text-xl font-extrabold font-sora tracking-tight text-foreground  xs:text-3xl;
+}
+.text-bold-2xl {
+  @apply text-base font-bold font-sora tracking-tight text-gray-900 xs:text-xl  xl:text-2xl;
+}
+.text-semibold-2xl {
+  @apply text-base font-semibold font-sora tracking-tight text-gray-900 xs:text-xl  xl:text-2xl;
+}
+
+
+.desc{
+  @apply text-sm font-normal leading-relaxed font-sora tracking-tight text-muted-foreground sm:text-lg;
+}
+.desc-white{
+  @apply text-sm font-normal leading-relaxed font-sora tracking-tight text-blue-100 sm:text-lg;
+}
+.desc-bold{
+  @apply text-base font-semibold leading-relaxed font-sora tracking-tight text-foreground  xs:text-xl;
+}
+.base-text{
+  @apply text-sm sm:text-base font-normal leading-relaxed  tracking-tight font-sora text-muted-foreground;
+}
+.text-small{
+  @apply text-xs sm:text-sm font-normal leading-relaxed  tracking-tight font-sora text-muted-foreground;
+}
+.subtitle-2xl {
+  @apply text-base xs:text-2xl text-gray-600 font-sora ;
+}
+
+
+
+/* button */
+.btn-responsive {
+  @apply   px-2 py-2 text-sm xs:px-8 xs:py-4 xs:text-lg text-center font-sora gap-2 shadow-lg font-semibold transition-colors duration-200 items-center;
+}
+
+
+/* //admin */
+  .sidebar-group {
+        @apply flex w-full flex-col gap-y-2;
+    }
+
+    .sidebar-group-title {
+        @apply overflow-hidden text-ellipsis text-sm font-medium text-slate-600 dark:text-slate-400;
+    }
+
+    .sidebar-item {
+        @apply flex h-[40px] w-full flex-shrink-0 items-center gap-x-3 rounded-lg p-3 text-base font-medium text-slate-900 transition-colors hover:bg-blue-50 dark:text-slate-50 dark:hover:bg-blue-950;
+        &.active {
+            @apply bg-blue-500 text-slate-50 dark:bg-blue-600;
+        }
+    }
+
+    .title {
+        @apply text-3xl font-semibold text-slate-900 transition-colors dark:text-slate-50;
+    }
+
+    .btn-ghost {
+        @apply flex h-10 flex-shrink-0 items-center justify-center gap-x-2 rounded-lg p-2 text-slate-400 transition-colors hover:bg-blue-50 hover:text-slate-500 dark:hover:bg-blue-950 dark:hover:text-slate-300;
+    }
+
+    .link {
+        @apply text-base font-medium text-slate-900 transition-colors hover:underline dark:text-slate-50;
+    }
+
+    .input {
+        @apply hidden h-10 flex-shrink-0 items-center gap-x-2 rounded-lg border border-slate-300 px-2 text-base text-slate-900 transition-colors has-[input:focus]:border-blue-500 md:flex md:w-auto lg:w-80 dark:border-slate-700 dark:text-slate-50 dark:focus:border-blue-600;
+    }
+
+    .card {
+        @apply flex flex-col gap-y-4 rounded-lg border border-slate-300 bg-white p-4 transition-colors dark:border-slate-700 dark:bg-slate-900;
+    }
+
+    .card-header {
+        @apply flex items-center gap-x-2;
+    }
+
+    .card-title {
+        @apply font-medium text-slate-900 transition-colors dark:text-slate-50;
+    }
+
+    .card-body {
+        @apply flex flex-col gap-y-2 rounded-lg p-4;
+    }
+
+    .table {
+        @apply h-full w-full text-slate-900 dark:text-slate-50;
+    }
+
+    .table-header {
+        @apply sticky top-0 bg-slate-200 transition-[background] dark:bg-slate-800;
+    }
+
+    .table-row {
+        @apply border-b border-slate-300 transition-colors last:border-none dark:border-slate-700;
+    }
+
+    .table-head {
+        @apply h-12 px-4 text-start;
+    }
+
+    .table-cell {
+        @apply w-fit whitespace-nowrap p-4 font-medium;
+    }
+
+
+.recharts-default-tooltip {
+    @apply !rounded-lg !border !border-slate-300 !bg-white transition-colors dark:!border-slate-700 dark:!bg-slate-900;
+}
+
+.recharts-tooltip-label {
+    @apply text-base font-medium text-slate-900 dark:text-slate-50;
+}
+
+.recharts-tooltip-item {
+    @apply text-base font-medium !text-blue-500 dark:!text-blue-600;
+}
+}
+
+
+/* LOADER */
+@keyframes ellipsis1 {
+  0% { transform: scale(0); }
+  100% { transform: scale(1); }
+}
+
+@keyframes ellipsis2 {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(8px, 0); }
+}
+
+@keyframes ellipsis3 {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(8px, 0); }
+}
+
+@keyframes ellipsis4 {
+  0% { transform: scale(1); }
+  100% { transform: scale(0); }
+}
+
+.animate-ellipsis1 {
+  animation: ellipsis1 0.6s infinite;
+}
+
+.animate-ellipsis2 {
+  animation: ellipsis2 0.6s infinite;
+  animation-delay: 0.15s;
+}
+
+.animate-ellipsis3 {
+  animation: ellipsis3 0.6s infinite;
+  animation-delay: 0.3s;
+}
+
+.animate-ellipsis4 {
+  animation: ellipsis4 0.6s infinite;
+  animation-delay: 0.45s;
+}

@@ -1,0 +1,11 @@
+{
+    "name": "cloudflare-upload",
+    "compatibility_date": "2025-07-11",
+    "main": "src/index.js",
+  "r2_buckets": [
+    {
+      "binding": "MY_BUCKET",
+      "bucket_name": "portfolio-uploads"
+    }
+  ]
+}

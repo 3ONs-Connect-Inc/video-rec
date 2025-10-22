@@ -1,0 +1,8 @@
+name = "cloudflare-upload"
+main = "src/index.js"
+compatibility_date = "2024-05-07"
+compatibility_flags = ["nodejs_compat"]
+
+[[r2_buckets]]
+binding = "MY_BUCKET"
+bucket_name = "portfolio-uploads"
